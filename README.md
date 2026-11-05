@@ -6,6 +6,26 @@ Grok Bot (xAI, 2026) gives you a team of named AI agents. Each one has its own c
 
 > Not affiliated with, endorsed by, or connected to xAI or Grok. "Grok Bot" is mentioned only to describe what inspired this project. Algen Bot has its own name, code and artwork.
 
+## Screenshots
+
+> These screenshots use made-up demo agents and chats, not my real ones.
+
+**The dashboard:** pinned agents at the top, agents organized into groups, and a chat with each one. You can see each step the agent took on its computer.
+
+![Algen Bot dashboard](docs/screenshots/dashboard.png)
+
+**On a phone:** it can be installed on the iPhone home screen.
+
+<p align="center">
+  <img src="docs/screenshots/mobile-agents.png" width="300" alt="Agent list on iPhone">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/mobile.png" width="300" alt="Chat on iPhone">
+</p>
+
+**An agent's own computer:** each agent has a full Linux desktop running 24/7 on the home lab, which you can watch live from the dashboard. Here it is browsing this repo.
+
+![An agent's Linux desktop](docs/screenshots/agent-computer.png)
+
 ---
 
 ## How I run it on my home lab
