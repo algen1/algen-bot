@@ -1,0 +1,45 @@
+name: algen-bot
+services:
+  hub:
+    image: algenbot-hub:dev
+    pull_policy: never
+    container_name: algenbot-hub
+    ports:
+      - target: 7400
+        published: "7400"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+      - type: bind
+        source: /DATA/AlgenBot/hub-data
+        target: /data
+      - type: bind
+        source: /DATA/AlgenBot/secrets
+        target: /run/algenbot-secrets
+        read_only: true
+    environment:
+      HOST_ROOT: /DATA/AlgenBot
+      AGENT_IMAGE: algenbot-agent:dev
+      HUB_USER: Your Name
+    mem_limit: 512m
+    restart: unless-stopped
+x-casaos:
+  architectures:
+    - amd64
+  main: hub
+  author: Algen Bot
+  developer: Algen Bot
+  category: Utilities
+  title:
+    en_us: Algen Bot
+  tagline:
+    en_us: Your team of always-on AI agents
+  description:
+    en_us: Named AI agents, each with its own computer, that work for you 24/7.
+  icon: http://YOUR-SERVER-IP:7400/icon-512.png
+  index: /
+  port_map: "7400"
+  scheme: http
+  store_app_id: algen-bot

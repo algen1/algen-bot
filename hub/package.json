@@ -1,0 +1,10 @@
+{
+  "name": "algenbot-hub",
+  "version": "0.1.0",
+  "private": true,
+  "main": "server.js",
+  "dependencies": {
+    "express": "4.21.2",
+    "dockerode": "4.0.2"
+  }
+}

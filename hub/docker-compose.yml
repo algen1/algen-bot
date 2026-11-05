@@ -1,0 +1,18 @@
+name: algenbot-hub
+services:
+  hub:
+    build: .
+    image: algenbot-hub:dev
+    container_name: algenbot-hub
+    ports:
+      - "7400:7400"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /DATA/AlgenBot/hub-data:/data
+      - /DATA/AlgenBot/secrets:/run/algenbot-secrets:ro
+    environment:
+      - HOST_ROOT=/DATA/AlgenBot
+      - AGENT_IMAGE=algenbot-agent:dev
+      - HUB_USER=Your Name
+    mem_limit: 512m
+    restart: unless-stopped

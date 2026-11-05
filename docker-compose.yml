@@ -1,0 +1,23 @@
+name: algenbot
+services:
+  agent-1:
+    build: ./agent
+    image: algenbot-agent:dev
+    container_name: algenbot-agent-1
+    environment:
+      - PUID=999
+      - PGID=1000
+      - TZ=Etc/UTC
+      - TITLE=Algen Bot - Agent 1
+    volumes:
+      - ./data/agent-1:/config
+    secrets:
+      - claude_token
+    ports:
+      - "7401:3001"
+    shm_size: "1gb"
+    mem_limit: 3g
+    restart: unless-stopped
+secrets:
+  claude_token:
+    file: ./secrets/claude_token
